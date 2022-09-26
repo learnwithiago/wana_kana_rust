@@ -64,19 +64,36 @@ pub(crate) fn katakana_to_hiragana_with_opt(input: &str, is_destination_romaji: 
                 .unwrap()
                 .output;
 
-            let romaji = romaji.chars().last().unwrap_or_else(|| {
-                panic!("could not find kana {:?} in TO_ROMAJI map", previous_kana)
-            });
+            let romaji = romaji.chars().last();
+
             // However, ensure 'オー' => 'おお' => 'oo' if this is a transform on the way to romaji
-            if let Some(prev_char) = input.chars().nth(index - 1) {
+            #[allow(clippy::collapsible_if)]
+            if let Some(prev_char) = input.chars().nth(index - 1)
+                && let Some(romaji) = romaji
+            {
                 if is_char_katakana(prev_char) && romaji == 'o' && is_destination_romaji {
                     hira.push('お');
                     continue;
                 }
             }
 
-            if let Some(hit) = LONG_VOWELS.get(&romaji) {
-                hira.push(*hit);
+            if let Some(romaji) = romaji {
+                // However, ensure 'オー' => 'おお' => 'oo' if this is a transform on the way to
+                // romaji
+                if let Some(prev_char) = input.chars().nth(index - 1) {
+                    if is_char_katakana(prev_char) && romaji == 'o' && is_destination_romaji {
+                        hira.push('お');
+                        continue;
+                    }
+                }
+
+                if let Some(hit) = LONG_VOWELS.get(&romaji) {
+                    hira.push(*hit);
+                }
+            } else {
+                // NOTE(zero): We sometimes get irregular long dash in subtitles, this works
+                // around it and simply output the long dash, ex. あっー
+                hira.push(char);
             }
         } else if !is_char_long_dash(char) && is_char_katakana(char) {
             // Shift charcode.

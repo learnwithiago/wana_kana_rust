@@ -1,3 +1,5 @@
+#![feature(let_chains)]
+
 //! # ワナカナ <--> WanaKana <--> わなかな
 //!
 //! Utility library for checking and converting between Japanese characters -
