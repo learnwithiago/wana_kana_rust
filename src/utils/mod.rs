@@ -23,7 +23,6 @@ pub mod katakana_to_hiragana;
 pub mod romaji_to_hiragana;
 
 pub use get_chunk::*;
-pub use hashmap_macro::*;
 pub use hiragana_to_katakana::*;
 pub use is_char_consonant::*;
 pub use is_char_english_punctuation::*;

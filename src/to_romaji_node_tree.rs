@@ -553,39 +553,39 @@ lazy_static! {
                             'ぃ',
                             Node {
                                 transitions: None,
-                                output: "jyi",
+                                output: "dyi",
                             },
                         ),
                         (
                             'ぇ',
                             Node {
                                 transitions: None,
-                                output: "je",
+                                output: "dye",
                             },
                         ),
                         (
                             'ゃ',
                             Node {
                                 transitions: None,
-                                output: "ja",
+                                output: "dya",
                             },
                         ),
                         (
                             'ゅ',
                             Node {
                                 transitions: None,
-                                output: "ju",
+                                output: "dyu",
                             },
                         ),
                         (
                             'ょ',
                             Node {
                                 transitions: None,
-                                output: "jo",
+                                output: "dyo",
                             },
                         ),
                     ]),
-                    output: "ji",
+                    output: "di",
                 },
             ),
             (
@@ -1103,39 +1103,39 @@ lazy_static! {
                                         'ぃ',
                                         Node {
                                             transitions: None,
-                                            output: "jjyi",
+                                            output: "ddyi",
                                         },
                                     ),
                                     (
                                         'ぇ',
                                         Node {
                                             transitions: None,
-                                            output: "jje",
+                                            output: "dde",
                                         },
                                     ),
                                     (
                                         'ゃ',
                                         Node {
                                             transitions: None,
-                                            output: "jja",
+                                            output: "ddya",
                                         },
                                     ),
                                     (
                                         'ゅ',
                                         Node {
                                             transitions: None,
-                                            output: "jju",
+                                            output: "ddyu",
                                         },
                                     ),
                                     (
                                         'ょ',
                                         Node {
                                             transitions: None,
-                                            output: "jjo",
+                                            output: "ddyo",
                                         },
                                     ),
                                 ]),
-                                output: "jji",
+                                output: "ddi",
                             },
                         ),
                         (
@@ -1149,7 +1149,7 @@ lazy_static! {
                             'づ',
                             Node {
                                 transitions: None,
-                                output: "zzu",
+                                output: "ddu",
                             },
                         ),
                         (
@@ -1882,7 +1882,7 @@ lazy_static! {
                 'づ',
                 Node {
                     transitions: None,
-                    output: "zu",
+                    output: "du",
                 },
             ),
             (
